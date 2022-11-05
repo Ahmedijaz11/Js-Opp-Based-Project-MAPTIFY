@@ -1,0 +1,141 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+
+'use strict';
+
+const hotel = {
+
+    name: 'bhiya piza',
+    location: 'gujrat , prince chook',
+    catagories: ['italian', 'chinees', 'pakistani'],
+    menu: ['piza','chicken', 'noodels', 'icecream'],
+    sweets:['lava cake','biscuits', 'ice shake','cream ball', ],
+    openingHours: {
+
+        mon: {open: 11,
+              close: 12},
+
+        Tue:  {open: 1,
+              close: 9},
+    },
+
+    order: function(sweetsIndex, menuIndex) {
+        return [this.menu[menuIndex], this.sweets[sweetsIndex] ];
+    },
+
+    orderPiza: function(ing1, ing2, ing3){
+        console.log(`here is your delicious Piza with ${ing1}, ${ing2} and ${ing3}`);
+
+    }
+};
+
+const arr = [2,3,4];
+const a= arr[99];
+const b = arr[19];
+const c = arr[29];
+
+const [x,y,z]= arr;
+//console.log(x,y,z);
+//console.log(arr);
+
+
+let [first, second]= hotel.menu;
+//console.log(first,second);
+//switching variables
+[first,second] = [second, first];
+//console.log(first,second);
+
+//Assigning Arraya values to variable and switching them
+
+let [maincourse, desert] = hotel.order(0,1);
+
+[maincourse, desert] = [desert , maincourse];
+//console.log (maincourse , desert);
+
+
+
+//fetching data in variables from arrays
+
+const {name, locaion, openingHours, catagories} = hotel;
+//console.log(name, locaion, catagories);
+
+const {
+    name : hotelName,
+    location : hotelAdress,
+    catagories : Foodtypes,
+     menu : Mainmenu,
+     openingHours: hours} = hotel;
+     
+
+   // console.log(hotelName, hotelAdress, Foodtypes, Mainmenu, hours);
+
+    //useful when getting data form Apis
+    const {menu : ourmenu = [], stater= []} = hotel;
+    //console.log(ourmenu, stater); 
+    
+
+
+
+//using Objects , nested objects
+
+const {mon} = openingHours;
+//console.log(mon);
+
+
+
+//spread oerator | exand array | add extra values in array
+const array = [7, 8 , 9];
+const newarray = [1,2, ...array];
+//console.log(newarray);
+//console.log(...newarray);
+
+
+//2nd examle of spread array
+
+const newMenu = [...hotel.menu, 'zinger'];
+//console.log(newMenu);
+//added new item in menu array we created before
+
+
+
+
+//copy or merge 2 arrays
+//now joining 2 arrays
+const dubble = [...array, ...hotel.menu];
+//console.log(dubble);
+
+
+
+//3rd example of spread operator
+//passing 3 parmeters as a array using spread operator in order piza function created before 
+
+
+// const ingredients = [prompt("Let's make a Piza ! ingredient 1 ?"),
+
+//                       prompt('ingredient 2 ?'),
+//                       prompt('ingredient 3 ?'),
+
+// ];
+
+//hotel.orderPiza(...ingredients);
+//console.log(ingredients);
+
+
+
+
+    </script>
+</body>
+</html>
